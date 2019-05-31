@@ -1,7 +1,5 @@
 ﻿using System;
 
-//Derry Lammerding
-
 namespace AnonymousIncomeComparisonProgram
 {
     class Program
