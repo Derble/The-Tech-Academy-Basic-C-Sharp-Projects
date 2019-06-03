@@ -32,6 +32,7 @@ namespace PackageExpressApplication
 
                     double estimatedTotal = dimensions * packageWeight / 100;
                     Console.WriteLine("Your estimated total for shipping this package is: $" + estimatedTotal);
+                    Console.WriteLine("Thank you.");
                 }
                 else
                 {
