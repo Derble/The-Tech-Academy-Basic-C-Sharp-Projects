@@ -11,6 +11,7 @@ namespace WhileStatementCountdownTimer
         static void Main(string[] args)
         {
             //while
+            //press enter to count down
             int x = 10;
             while (x > 0)
             {
