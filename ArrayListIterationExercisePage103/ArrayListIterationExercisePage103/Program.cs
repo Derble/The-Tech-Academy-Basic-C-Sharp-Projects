@@ -166,10 +166,7 @@ namespace ArrayListIterationExercisePage103
             //11. Create a List of strings that has at least two identical strings in the List. 
             //Create a foreach loop that evaluates each item in the list, and 
             //displays a message showing the string and whether or not it has already appeared in the list.
-
-            //ideas
-            //if count > 1 it has already appeared in list
-            //bool for count more than one true
+            
 
             List<string> pokemonNames = new List<string>() { "Pikachu", "Bulbasaur", "Charmander", "Squirtle", "Bulbasaur", "Bulbasaur", "Charmander"};
        
@@ -188,45 +185,6 @@ namespace ArrayListIterationExercisePage103
                 index++;
             }
             Console.ReadLine();
-
-            
-
-
-
-            //Code that doesn't do what I needed it to, but keeping it around to reference for later projects
-            //List<int> indexOfCity = new List<int>();
-            /*
-            foreach (string q in cityNames)
-            {
-                if (city == q)
-                {
-                    Console.WriteLine(cityNames.IndexOf(q));
-                }
-            }*/
-
-            //need to create a counter to keep track of 
-            //for (int z = 0; z < cityNames.Count; z++)
-            //{
-
-            //    if (city == cityNames[z])
-            //    {
-            //        //int indexNumber = cityNames.IndexOf(city);
-            //        //indexOfCity.Add(indexNumber);
-            //        Console.WriteLine("Your answer matches an entry in the list at index: " + z);
-            //    }
-            //    //Console.WriteLine(cityNames[z]);
-
-            //}
-            //Console.WriteLine("Your answer matches an entry in the list at index: " + cityNames.IndexOf(city));
-            /*
-            for (int w = 0; w < indexOfCity.Count; w++)
-            {
-                Console.WriteLine("Your answer matches an entry in the list at index: " + indexOfCity[w]);
-            }
-            //Console.WriteLine("Your answer matches an entry in the list at index: " + cityNames.IndexOf(city));
-            */
-
-
 
         }
     }
