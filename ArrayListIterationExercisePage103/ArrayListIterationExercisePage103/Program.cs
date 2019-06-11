@@ -19,7 +19,7 @@ namespace ArrayListIterationExercisePage103
             string favColor = Console.ReadLine();
             for (int j = 0; j < colors.Length; j++)
             {
-                colors[j] = favColor;
+                colors[j] = colors[j] + favColor;
             }
             for (int i = 0; i < colors.Length; i++)
             {
