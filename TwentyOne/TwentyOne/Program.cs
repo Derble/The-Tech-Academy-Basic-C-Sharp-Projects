@@ -12,13 +12,16 @@ namespace TwentyOne
         {
 
             Deck deck = new Deck();
-            deck = Shuffle(deck);
+            int timesShuffled = 0;
+            deck = Shuffle(deck, out timesShuffled, 3);//shuffles deck 3 times and returning the timesShuffled value, not returning it to deck, it's sending it out to the line above int timesSHuffled = 0;
+            //deck = Shuffle(deck, 3); //shuffles deck 3 times
             
             foreach (Card card in deck.Cards)
             {
                 Console.WriteLine(card.Face + " of " + card.Suit);
             }
             Console.WriteLine(deck.Cards.Count);
+            Console.WriteLine("Times shuffled: {0}", timesShuffled);
             Console.ReadLine();
 
 
@@ -44,22 +47,39 @@ namespace TwentyOne
         //Deck is what it is returning, the type of data it is returning
         //Shuffle is the name of the function,
         //takes a parameter of type Deck and giving it the variable name deck for when we want to refer to it
-        public static Deck Shuffle(Deck deck)
+        public static Deck Shuffle(Deck deck, out int timesShuffled, int times = 1)
         {
-            //create a temporary list where we will store our shuffled items
-            List<Card> TempList = new List<Card>();
-            Random random = new Random();
+            timesShuffled = 0;
 
-            //grab a random card take it out of a deck and put it into a temp deck
-            while(deck.Cards.Count > 0)
+            for (int i = 0; i < times; i++)
             {
-                int randomIndex = random.Next(0, deck.Cards.Count);//random.Next takes a min and max value, between 0 and deck.cards.count
-                TempList.Add(deck.Cards[randomIndex]);//add to temp list
-                deck.Cards.RemoveAt(randomIndex);//delete it from list of Cards
+                timesShuffled++;
+                //create a temporary list where we will store our shuffled items
+                List<Card> TempList = new List<Card>();
+                Random random = new Random();
+
+                //grab a random card take it out of a deck and put it into a temp deck
+                while (deck.Cards.Count > 0)
+                {
+                    int randomIndex = random.Next(0, deck.Cards.Count);//random.Next takes a min and max value, between 0 and deck.cards.count
+                    TempList.Add(deck.Cards[randomIndex]);//add to temp list
+                    deck.Cards.RemoveAt(randomIndex);//delete it from list of Cards
+                }
+                deck.Cards = TempList;
             }
-            deck.Cards = TempList;
+
             return deck;
         }
+
+        //method for shuffling multiple times, overloading, uses same method name but is a little different, in this case 2 input parameters
+        //public static Deck Shuffle(Deck deck, int times)
+        //{
+        //    for (int i = 0; i < times; i++)
+        //    {
+        //        deck = Shuffle(deck);
+        //    }
+        //    return deck;
+        //}//commented out when added int times = 1 to Shuffle above
 
 
     }
