@@ -11,31 +11,30 @@ namespace ClassMethodsOpParamExercisePage115
         static void Main(string[] args)
         {
             //Still working on this
-            try
+           
+            
+            Console.WriteLine("Hello, please enter an integer:");
+            int numOne = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Would you like to enter another integer? Type \"yes\" or \"no\"");
+            string answer = Console.ReadLine();
+            if (answer == "yes")
             {
-                Console.WriteLine("Hello, please enter an integer:");
-                int numOne = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("You may enter a second number if you'd like to:");
+                Console.WriteLine("Please enter in a second integer:");
                 int numTwo = Convert.ToInt32(Console.ReadLine());
-                
                 OptionalParameter n = new OptionalParameter();
 
-                int mathIsDone = n.someMoreMath(numOne, numTwo);
-                Console.WriteLine(mathIsDone);
+                int result = n.someMoreMath(numOne, numTwo);
+                Console.WriteLine(numOne + " times " + numTwo + " equals " + result);
             }
-            catch (FormatException ex)
+            else
             {
-                int numTwo = 12;
+                OptionalParameter x = new OptionalParameter();
 
+                int result = x.someMoreMath(numOne);
+                Console.WriteLine(numOne + " times 12 equals " + result);
             }
-            catch (Exception ex)
-            {
-                int numTwo = 12;
-            }
-            
-
-            
+                
+                  
             Console.ReadLine();
         }
     }
