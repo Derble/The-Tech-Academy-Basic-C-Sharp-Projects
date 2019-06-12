@@ -8,8 +8,6 @@ namespace ExercisePage113Methods
 {
     class MathOperation
     {
-        
-        
 
         public void OperationAndDisplay(int a, int b)
         {

@@ -10,11 +10,11 @@ namespace ExercisePage113Methods
     {
         static void Main(string[] args)
         {
-            int c = 7;
-            int d = 5;
+            int a = 7;
+            int b = 5;
             MathOperation i = new MathOperation();
             i.OperationAndDisplay(7, 5);//passing in the two numbers directly
-            i.OperationAndDisplay(c, d);//specifying parameters by name
+            i.OperationAndDisplay(a, b);//specifying parameters by name
             Console.ReadLine();
         }
         
