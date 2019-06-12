@@ -14,7 +14,7 @@ namespace ClassMethodExercisePage144
             return addFive;
         }
 
-        public int someMath(double b)
+        public int someMath(decimal b)
         {
             int multiplyFive = Convert.ToInt32(b * 5);
             return multiplyFive;
