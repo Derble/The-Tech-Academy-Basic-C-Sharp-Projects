@@ -11,17 +11,18 @@ namespace TwentyOne
         static void Main(string[] args)
         {
 
-            Deck deck = new Deck();
-            int timesShuffled = 0;
-            deck = Shuffle(deck, out timesShuffled, 3);//shuffles deck 3 times and returning the timesShuffled value, not returning it to deck, it's sending it out to the line above int timesSHuffled = 0;
+            Deck deck = new Deck();//create object deck
+            //int timesShuffled = 0;
+            //deck = Shuffle(deck, out timesShuffled, 3);//shuffles deck 3 times and returning the timesShuffled value, not returning it to deck, it's sending it out to the line above int timesSHuffled = 0;
             //deck = Shuffle(deck, 3); //shuffles deck 3 times
+            deck.Shuffle(3);//call shuffle method 3 times, call method shuffle on itself
             
             foreach (Card card in deck.Cards)
             {
                 Console.WriteLine(card.Face + " of " + card.Suit);
             }
             Console.WriteLine(deck.Cards.Count);
-            Console.WriteLine("Times shuffled: {0}", timesShuffled);
+            //Console.WriteLine("Times shuffled: {0}", timesShuffled);
             Console.ReadLine();
 
 
@@ -41,7 +42,7 @@ namespace TwentyOne
              //Console.WriteLine(deck.Cards[0].Face + " of " + deck.Cards[0].Suit);
             */
         }
-
+        /*
         //public accessible everywhere, 
         //static bc we don't want to have to create an object program before calling this,
         //Deck is what it is returning, the type of data it is returning
@@ -70,7 +71,7 @@ namespace TwentyOne
 
             return deck;
         }
-
+        */
         //method for shuffling multiple times, overloading, uses same method name but is a little different, in this case 2 input parameters
         //public static Deck Shuffle(Deck deck, int times)
         //{

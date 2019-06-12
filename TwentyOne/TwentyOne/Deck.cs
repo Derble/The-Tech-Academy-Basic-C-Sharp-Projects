@@ -39,5 +39,31 @@ namespace TwentyOne
         }
 
         public List<Card> Cards { get; set; }//property cards of data type List<Card>
+
+
+        //public accessible everywhere, 
+        //static bc we don't want to have to create an object program before calling this,
+        //Deck is what it is returning, the type of data it is returning
+        //Shuffle is the name of the function,
+        //takes a parameter of type Deck and giving it the variable name deck for when we want to refer to it
+        public void Shuffle(int times = 1)
+        {
+            for (int i = 0; i < times; i++)
+            {
+                //create a temporary list where we will store our shuffled items
+                List<Card> TempList = new List<Card>();
+                Random random = new Random();
+
+                //grab a random card take it out of a deck and put it into a temp deck
+                while (Cards.Count > 0)
+                {
+                    int randomIndex = random.Next(0, Cards.Count);//random.Next takes a min and max value, between 0 and deck.cards.count
+                    TempList.Add(Cards[randomIndex]);//add to temp list
+                    Cards.RemoveAt(randomIndex);//delete it from list of Cards
+                }
+                Cards = TempList;
+            }
+
+        }
     }
 }
