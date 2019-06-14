@@ -8,7 +8,7 @@ namespace ClassMethodsOpParamExercisePage115
 {
     class OptionalParameter
     {
-        
+        /*//not needed
         public int someMoreMath(int a)
         {
             
@@ -16,12 +16,20 @@ namespace ClassMethodsOpParamExercisePage115
             return c;
             
         }
+        */
+        
         public int someMoreMath(int a, int b = 10)
         {
             int c = a * b;
             return c;
             
         }
+        
+
+        //public void someMoreMath(int a, int b = 10)
+        //{
+        //    int c = a * b;
+        //}
 
 
         /* // used in a previous version, kept for later revision

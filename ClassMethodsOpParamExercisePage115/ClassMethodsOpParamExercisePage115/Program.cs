@@ -10,13 +10,31 @@ namespace ClassMethodsOpParamExercisePage115
     {
         static void Main(string[] args)
         {
-            //Still working on this
-           
             
             Console.WriteLine("Hello, please enter an integer:");
             int numOne = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Would you like to enter another integer? Type \"yes\" or \"no\"");
+            Console.WriteLine("Please enter another integer if you would like to.");
             string answer = Console.ReadLine();
+            int numTwo;
+            int result;
+            OptionalParameter n = new OptionalParameter();
+            if (string.IsNullOrEmpty(answer))
+            {
+
+                result = n.someMoreMath(numOne);
+
+            }
+            else
+            {
+                numTwo = Convert.ToInt32(answer);
+                result = n.someMoreMath(numOne, numTwo);
+            }
+            
+            Console.WriteLine("Your product is " + result);
+            
+
+            //Code that was removed after I got help and fixed other code.
+            /*
             if (answer == "yes")
             {
                 Console.WriteLine("Please enter in a second integer:");
@@ -33,8 +51,9 @@ namespace ClassMethodsOpParamExercisePage115
                 int result = x.someMoreMath(numOne);
                 Console.WriteLine(numOne + " times 12 equals " + result);
             }
-                
-                  
+               */
+
+
             Console.ReadLine();
         }
     }
