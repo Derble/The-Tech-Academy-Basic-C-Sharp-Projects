@@ -10,9 +10,14 @@ namespace TwentyOne
     public class TwentyOneGame : Game
     {
         //twentyone specific code
-        public void Play()
+        public override void Play() //override satisfies contract that we will define this method
         {
             throw new NotImplementedException(); //catch for accidentally calling that method until it is actually defined
         }
-    }
+        public override void ListPlayers()
+        {
+            Console.WriteLine("21 Players");
+            base.ListPlayers();
+        }
+    }//TwentyOneGame does not HAVE A (HAS A) game, it IS A game, so inheritance is ok
 }

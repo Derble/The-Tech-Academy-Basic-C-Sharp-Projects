@@ -25,7 +25,30 @@ namespace TwentyOne
             //game.Play();
             //Console.ReadLine(); //called the superclass method, whe you call a method from the class you're inheriting from, Game is the super class
 
+
+            //Polymorphism property of classes to morph into other types of classes
+            //a TwentyOneGame object can morph into a game object
+            //TwentyOneGame can morph into another higher order object
+            //Game game = new TwentyOneGame();
+
+            //comes in handy when you want to make a list consisting of more than one data type
+            //List<Game> games = new List<Game>();
+            //TwentyOneGame game = new TwentyOneGame();
+            //games.Add(game);
+
+            //TwentyOneGame
+            //PokerGame
+            //SolitaireGame
+
+            //Game game = new Game(); //if game is abstract class, you can no longer instantiate it
+
+
+            TwentyOneGame game = new TwentyOneGame();
+            game.Players = new List<string>() { "Jesse", "Bill", "Zoe" };
+            game.ListPlayers();
+            Console.ReadLine();
             
+            /*
             Deck deck = new Deck();//create object deck
             //int timesShuffled = 0;
             //deck = Shuffle(deck, out timesShuffled, 3);//shuffles deck 3 times and returning the timesShuffled value, not returning it to deck, it's sending it out to the line above int timesSHuffled = 0;
@@ -39,7 +62,7 @@ namespace TwentyOne
             Console.WriteLine(deck.Cards.Count);
             //Console.WriteLine("Times shuffled: {0}", timesShuffled);
             Console.ReadLine();
-            
+            */
 
 
             //Methods have to be part of a class
