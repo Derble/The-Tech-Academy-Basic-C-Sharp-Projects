@@ -10,7 +10,22 @@ namespace TwentyOne
     {
         static void Main(string[] args)
         {
+            //object initialization, initializes the new object with some values
+            //Card card = new Card() { Face = "King", Suit = "Spades" };
+            //card.Face = "King";
+            //card.Suit = "Spades";
 
+            //Game game = new Game();
+            //game.Dealer = "Jesse";
+            //game.Name = "TwentyOne";
+
+            //TwentyOneGame game = new TwentyOneGame(); //since inherited from game class, has access to players property
+            //game.Players = new List<string>() { "Jesse", "Bill", "Joe" };
+            //game.ListPlayers();
+            //game.Play();
+            //Console.ReadLine(); //called the superclass method, whe you call a method from the class you're inheriting from, Game is the super class
+
+            
             Deck deck = new Deck();//create object deck
             //int timesShuffled = 0;
             //deck = Shuffle(deck, out timesShuffled, 3);//shuffles deck 3 times and returning the timesShuffled value, not returning it to deck, it's sending it out to the line above int timesSHuffled = 0;
@@ -24,7 +39,7 @@ namespace TwentyOne
             Console.WriteLine(deck.Cards.Count);
             //Console.WriteLine("Times shuffled: {0}", timesShuffled);
             Console.ReadLine();
-
+            
 
 
             //Methods have to be part of a class
