@@ -8,6 +8,6 @@ namespace InheritanceSuperclassExercisePage120
 {
     class Employee : Person
     {
-
+        public int Id { get; set; }
     }
 }

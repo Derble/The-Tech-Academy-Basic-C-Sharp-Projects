@@ -13,9 +13,8 @@ namespace InheritanceSuperclassExercisePage120
 
         public void SayName()
         {
-            Console.WriteLine("Name: " + FirstName + LastName);
+            Console.WriteLine("Name: " + FirstName + " " + LastName);
         }
-
-        public int Id { get; set; }
+        
     }
 }
