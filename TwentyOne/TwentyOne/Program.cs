@@ -42,13 +42,14 @@ namespace TwentyOne
 
             //Game game = new Game(); //if game is abstract class, you can no longer instantiate it
 
-
+            /*
             TwentyOneGame game = new TwentyOneGame();
             game.Players = new List<string>() { "Jesse", "Bill", "Zoe" };
             game.ListPlayers();
             Console.ReadLine();
+            */
             
-            /*
+            
             Deck deck = new Deck();//create object deck
             //int timesShuffled = 0;
             //deck = Shuffle(deck, out timesShuffled, 3);//shuffles deck 3 times and returning the timesShuffled value, not returning it to deck, it's sending it out to the line above int timesSHuffled = 0;
@@ -62,8 +63,9 @@ namespace TwentyOne
             Console.WriteLine(deck.Cards.Count);
             //Console.WriteLine("Times shuffled: {0}", timesShuffled);
             Console.ReadLine();
-            */
-
+            
+            //.NET does not support multiple inheritance, one class can only inherit from one other class
+            //use interfaces
 
             //Methods have to be part of a class
 
