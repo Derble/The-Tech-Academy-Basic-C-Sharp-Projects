@@ -14,5 +14,27 @@ namespace OverloadOperatorsPage129using120
         {
             Console.WriteLine("Name: " + FirstName + " " + LastName + " ID #: " + Id);
         }
+
+        //Overload the "==" operator so it checks if two Employee objects are equal by comparing their Id property.
+        public static bool operator== (Employee employee, Employee employee2)
+        {
+            bool status = false;
+            if (employee.Id == employee2.Id)
+            {
+                status = true;
+            }
+            return status;
+        }
+        public static bool operator!= (Employee employee, Employee employee2)
+        {
+            bool status = false;
+            if (employee.Id != employee2.Id)
+            {
+                status = false;
+            }
+            return status;
+        }
+        
+        
     }
 }
