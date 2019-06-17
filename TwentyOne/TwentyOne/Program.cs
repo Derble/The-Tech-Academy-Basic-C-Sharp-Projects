@@ -48,6 +48,7 @@ namespace TwentyOne
             game.ListPlayers();
             Console.ReadLine();
             */
+            /*
             Game game = new TwentyOneGame();
             game.Players = new List<Player>();//had to add this in bc there was no list created yet to add a player into
             Player player = new Player();
@@ -56,8 +57,13 @@ namespace TwentyOne
             game += player; //easier way of writing game = game + player
             //game = game - player;
             game -= player;
+            */
+
+            //generics feature of language that allows you to write generic classes or functions, more generalized and less specific
+            //list holds data type of whats being passed in. T generic
 
             
+
             Deck deck = new Deck();//create object deck
             //int timesShuffled = 0;
             //deck = Shuffle(deck, out timesShuffled, 3);//shuffles deck 3 times and returning the timesShuffled value, not returning it to deck, it's sending it out to the line above int timesSHuffled = 0;

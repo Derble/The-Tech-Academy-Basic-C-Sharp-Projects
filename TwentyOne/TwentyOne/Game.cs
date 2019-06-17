@@ -14,7 +14,8 @@ namespace TwentyOne
 
         public abstract void Play();//method that is makred with abstract keyword, can only exist inside and abstract class, ab method contains no implementation
                                     //all it does is state that any class inheriting this class MUST implement this method
-
+        
+        
         public virtual void ListPlayers()//not returning anything, just printing to console
         {   //virtual method inside an abstract class, this method gets inherited by inheriting class but has ability to override it
             foreach (Player player in Players)
@@ -22,6 +23,7 @@ namespace TwentyOne
                 Console.WriteLine(player.Name);
             }
         }
+        
     }
     //abstract class can never be instantiated, never be an object, only meant to be inherited from, Game is an example of a base or abstract class
 }

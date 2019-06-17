@@ -14,6 +14,7 @@ namespace TwentyOne
         {
             throw new NotImplementedException(); //catch for accidentally calling that method until it is actually defined
         }
+        
         public override void ListPlayers()
         {
             Console.WriteLine("21 Players");
@@ -23,5 +24,6 @@ namespace TwentyOne
         {
             throw new NotImplementedException();
         }
+        
     }//TwentyOneGame does not HAVE A (HAS A) game, it IS A game, so inheritance is ok
 }
