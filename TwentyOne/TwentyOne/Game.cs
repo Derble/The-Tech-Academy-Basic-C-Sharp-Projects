@@ -8,7 +8,7 @@ namespace TwentyOne
 {
     public abstract class Game //made public for other classes to access, generic name with only those properties specific to all games
     {
-        public List<string> Players { get; set; } //all games have a list of players, names, a dealer
+        public List<Player> Players { get; set; } //all games have a list of players, names, a dealer
         public string Name { get; set; }
         public string Dealer { get; set; }
 
@@ -17,9 +17,9 @@ namespace TwentyOne
 
         public virtual void ListPlayers()//not returning anything, just printing to console
         {   //virtual method inside an abstract class, this method gets inherited by inheriting class but has ability to override it
-            foreach (string player in Players)
+            foreach (Player player in Players)
             {
-                Console.WriteLine(player);
+                Console.WriteLine(player.Name);
             }
         }
     }

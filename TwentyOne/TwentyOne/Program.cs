@@ -48,7 +48,15 @@ namespace TwentyOne
             game.ListPlayers();
             Console.ReadLine();
             */
-            
+            Game game = new TwentyOneGame();
+            game.Players = new List<Player>();//had to add this in bc there was no list created yet to add a player into
+            Player player = new Player();
+            player.Name = "Jesse";
+            //game = game + player;
+            game += player; //easier way of writing game = game + player
+            //game = game - player;
+            game -= player;
+
             
             Deck deck = new Deck();//create object deck
             //int timesShuffled = 0;
