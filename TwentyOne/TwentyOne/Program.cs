@@ -62,7 +62,15 @@ namespace TwentyOne
             //generics feature of language that allows you to write generic classes or functions, more generalized and less specific
             //list holds data type of whats being passed in. T generic
 
-            
+            //enum stuff
+            //limit possible values you can receive from a user
+            //DaysOfTheWeek day = DaysOfTheWeek.Monday;
+
+            //enums continued
+            Card card = new Card();
+            card.Suit = Suit.Clubs;
+            int underlyingValue = Convert.ToInt32(Suit.Diamonds);
+            Console.WriteLine(underlyingValue);
 
             Deck deck = new Deck();//create object deck
             //int timesShuffled = 0;
@@ -70,10 +78,12 @@ namespace TwentyOne
             //deck = Shuffle(deck, 3); //shuffles deck 3 times
             deck.Shuffle(3);//call shuffle method 3 times, call method shuffle on itself
             
+            /*
             foreach (Card card in deck.Cards)
             {
                 Console.WriteLine(card.Face + " of " + card.Suit);
             }
+            */
             Console.WriteLine(deck.Cards.Count);
             //Console.WriteLine("Times shuffled: {0}", timesShuffled);
             Console.ReadLine();
@@ -136,6 +146,17 @@ namespace TwentyOne
         //    return deck;
         //}//commented out when added int times = 1 to Shuffle above
 
-
+        /*
+        public enum DaysOfTheWeek
+        {
+            Monday,
+            Tuesday,
+            Wednesday,
+            Thursday,
+            Friday,
+            Saturday,
+            Sunday
+        }//no need to use quotes, only possible values it can have
+        */
     }
 }

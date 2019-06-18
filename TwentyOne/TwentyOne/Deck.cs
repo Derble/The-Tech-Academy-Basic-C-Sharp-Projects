@@ -21,6 +21,7 @@ namespace TwentyOne
             //creates 2 lists and immediately instantiates them with values
             foreach (string face in Faces)
             {
+                /*//commented out during enum lesson
                 foreach (string suit in Suits)
                 {
                     Card card = new Card(); //card lowercase is a variable taht only exists inside of each loop, once it ends, it doesn't exist anymore which i why we can create it over and over again with the same name
@@ -28,6 +29,7 @@ namespace TwentyOne
                     card.Face = face;
                     Cards.Add(card);
                 }
+                */
             }
 
             //Cards = new List<Card>();
