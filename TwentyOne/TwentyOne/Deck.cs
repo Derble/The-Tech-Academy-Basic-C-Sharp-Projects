@@ -12,6 +12,20 @@ namespace TwentyOne
         public Deck()//constructor name is always the same as the class
         {
             Cards = new List<Card>();//instantiates property cards as an empty list of cards, Cards refers to the property of the class, so it doesn't need a data type
+
+            for (int i = 0; i < 13; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    Card card = new Card();
+                    card.Face = (Face)i; //casting to Face inside parentheses
+                    card.Suit = (Suit)j;
+                    Cards.Add(card);
+                }
+            }
+
+
+            /*this portion rewritten during the enums part 2
             List<string> Suits = new List<string>() { "Clubs", "Hearts", "Diamonds", "Spades" };
             List<string> Faces = new List<string>()
             {
@@ -21,7 +35,7 @@ namespace TwentyOne
             //creates 2 lists and immediately instantiates them with values
             foreach (string face in Faces)
             {
-                /*//commented out during enum lesson
+                //commented out during enum lesson
                 foreach (string suit in Suits)
                 {
                     Card card = new Card(); //card lowercase is a variable taht only exists inside of each loop, once it ends, it doesn't exist anymore which i why we can create it over and over again with the same name
@@ -29,8 +43,9 @@ namespace TwentyOne
                     card.Face = face;
                     Cards.Add(card);
                 }
-                */
+                
             }
+            */
 
             //Cards = new List<Card>();
             //Card cardOne = new Card();
