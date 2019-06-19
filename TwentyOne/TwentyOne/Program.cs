@@ -73,6 +73,30 @@ namespace TwentyOne
             Console.WriteLine(underlyingValue);
             */
 
+            //reference types are like doc on google drive, really same doc since it is the same memory location, when card 2 edits, changes card 1 also
+            //any data type that stores value by reference is called a reference type, general rule of thumb, this includes all classes
+            //string, List, Card are a reference type
+
+            Card card1 = new Card();
+            Card card2 = card1;
+            card1.Face = Face.Eight;
+            card2.Face = Face.King;
+
+            //by changing Card class to struct, Eight is displayed rather than King since it is no longer reference
+            //card1 is now its own separate instance
+
+            //value type - if a copy is sent by email rather than using google drive, that's like sending by value, separate independent instance, not pointing to storage location, sending actual value
+            //value type examples - integers, booleans, enums, datetime
+            //int is a public struct, Int32 could be used in place of int
+            //int number = 5;
+            //Int32 number = 5; same thing
+            //struct is the same as a class but is a value type, struct can't be inherited
+            //struct is a value type, value type can't be null because they are non-nullable
+            //non-nullable data types are structs, booleans, integers
+            Console.WriteLine(card1.Face);
+
+
+            /*
             Deck deck = new Deck();//create object deck
             //int timesShuffled = 0;
             //deck = Shuffle(deck, out timesShuffled, 3);//shuffles deck 3 times and returning the timesShuffled value, not returning it to deck, it's sending it out to the line above int timesSHuffled = 0;
@@ -87,6 +111,7 @@ namespace TwentyOne
            
             Console.WriteLine(deck.Cards.Count);
             //Console.WriteLine("Times shuffled: {0}", timesShuffled);
+            */
             Console.ReadLine();
             
             //.NET does not support multiple inheritance, one class can only inherit from one other class

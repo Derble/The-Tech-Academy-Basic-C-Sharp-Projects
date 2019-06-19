@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TwentyOne
 {
-    public class Card
+    public struct Card //was public class card, doesn't inherit so struct is ok
     {
         //create properties of card
 
