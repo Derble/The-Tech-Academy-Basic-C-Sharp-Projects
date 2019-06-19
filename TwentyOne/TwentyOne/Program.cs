@@ -76,12 +76,12 @@ namespace TwentyOne
             //reference types are like doc on google drive, really same doc since it is the same memory location, when card 2 edits, changes card 1 also
             //any data type that stores value by reference is called a reference type, general rule of thumb, this includes all classes
             //string, List, Card are a reference type
-
+            /*
             Card card1 = new Card();
             Card card2 = card1;
             card1.Face = Face.Eight;
             card2.Face = Face.King;
-
+            */
             //by changing Card class to struct, Eight is displayed rather than King since it is no longer reference
             //card1 is now its own separate instance
 
@@ -93,11 +93,54 @@ namespace TwentyOne
             //struct is the same as a class but is a value type, struct can't be inherited
             //struct is a value type, value type can't be null because they are non-nullable
             //non-nullable data types are structs, booleans, integers
-            Console.WriteLine(card1.Face);
+            //Console.WriteLine(card1.Face);
 
+            //lambda functions 
+            //very difficult to debug since you can't step through it like a loop
+            
+            Deck deck = new Deck();//create object deck
 
             /*
-            Deck deck = new Deck();//create object deck
+            //count number of Aces in deck using lambda function
+            int count = deck.Cards.Count(x => x.Face == Face.Ace);//Cards is a List, Count is a lambda function
+            //counting all the elements (x) in the List, x is each element where x.Face is equal to Face.Ace, x can be renamed to anything
+            // => means "map this expression to each item"
+            Console.WriteLine(count);
+            */
+
+            /*
+            List<Card> newList = deck.Cards.Where(x => x.Face == Face.King).ToList();//where is lambda function that lets you filter your list for particular features
+            //doesn't produce a list so have to use ToList()
+            //take list of cards, filter where face is king, map that to a new list
+            foreach (Card card in newList)
+            {
+                Console.WriteLine(card.Face);
+            }
+            */
+
+            /*
+            List<int> numberList = new List<int>() { 1, 2, 3, 535, 342, 23 };
+            //int sum = numberList.Sum(); //or could add more arithmetic like the line below
+            //int sum = numberList.Sum(x => x + 5);
+            //int sum = numberList.Max();
+            //int sum = numberList.Min();
+            int sum = numberList.Where(x => x > 20).Sum();//have to add Sum() since numberList.Where(x => x > 20) wouldn't do anything
+            Console.WriteLine(sum);
+            */
+
+            /*//count number of aces in deck using for loop
+            int counter = 0;
+            foreach (Card card in deck.Cards)
+            {
+                if (card.Face == Face.Ace)
+                {
+                    counter++;
+                }
+            }
+            Console.WriteLine(counter);
+            */
+
+            /*
             //int timesShuffled = 0;
             //deck = Shuffle(deck, out timesShuffled, 3);//shuffles deck 3 times and returning the timesShuffled value, not returning it to deck, it's sending it out to the line above int timesSHuffled = 0;
             //deck = Shuffle(deck, 3); //shuffles deck 3 times
