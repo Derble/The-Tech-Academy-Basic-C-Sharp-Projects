@@ -23,6 +23,7 @@ namespace TwentyOne
             Console.WriteLine(card); //changed for logging file i/o demo
             using (StreamWriter file = new StreamWriter(@"C:\Users\RX-78\Desktop\log.txt", true))//takes in a path, true is yes I want to append
             {
+                file.WriteLine(DateTime.Now);
                 file.WriteLine(card);
             }
             Deck.Cards.RemoveAt(0);//remove the card that was dealt from the deck. Remove at is a method that any list had, pass in an index of where you want to remove

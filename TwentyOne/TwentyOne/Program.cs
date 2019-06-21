@@ -11,6 +11,14 @@ namespace TwentyOne
     {
         static void Main(string[] args)
         {
+            //datetime demo
+            //datetime is a struct so it is not nullable
+            //DateTime yearOfBirth = new DateTime(1995, 5, 23, 8, 32, 45);//create new datetime object
+            //DateTime yearOfGraduation = new DateTime(2013, 6, 1, 16, 34, 22);
+            //TimeSpan ageAtGraduation = yearOfGraduation - yearOfBirth;//gives the difference in days
+            
+
+
             //I/O demo, writing text to file
             //writing text
             //string text = "Here is some text.";
