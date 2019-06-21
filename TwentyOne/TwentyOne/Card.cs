@@ -35,6 +35,12 @@ namespace TwentyOne
         //class is just a model, it's a design of an object
         //class is like a cookie cutter and an object is like a cookie
         //class is recipe, object is the food
+
+
+        public override string ToString()//custom ToString method
+        {
+            return string.Format("{0} of {1}", Face, Suit);
+        }
     }
 
     //define enum, like defining a class but this one specifically relates to the card class so it's beneficial to define it in this class

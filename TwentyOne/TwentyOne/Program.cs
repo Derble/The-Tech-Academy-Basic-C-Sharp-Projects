@@ -10,6 +10,35 @@ namespace TwentyOne
     {
         static void Main(string[] args)
         {
+            //Putting it all together page 141, commented out everything and are creating a new main method, new code
+            Console.WriteLine("Welcome to The Great Northern Hotel and Casino. Let's start by telling me your name.");
+            string playerName = Console.ReadLine();
+
+            Console.WriteLine("And how much money did you bring today?");
+            int bank = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Hello, {0}. Would you like to join a game of 21 right now?", playerName);
+            string answer = Console.ReadLine().ToLower();//makes whatever they asnwer as all lower case
+
+            if (answer == "yes" || answer == "ya" || answer == "yeah" || answer == "y")//|| is or
+            {
+                Player player = new Player(playerName, bank);//sends playerName and bank to Player constructor in Player class
+                Game game = new TwentyOneGame();//polymorphism, exposes the overloaded operators for use
+                game += player; //adding player to the game
+                player.isActivelyPlaying = true; //isActivelyPlaying is a property of player
+                while (player.isActivelyPlaying && player.Balance > 0)
+                {
+                    game.Play();
+                }
+                game -= player;
+                Console.WriteLine("Thank you for playing!");
+            }
+
+            Console.WriteLine("Feel free to look around the Casino. Bye for now.");
+            Console.Read();
+
+
+            //-------------------------------------------------------------------------old code
             //object initialization, initializes the new object with some values
             //Card card = new Card() { Face = "King", Suit = "Spades" };
             //card.Face = "King";
@@ -97,8 +126,8 @@ namespace TwentyOne
 
             //lambda functions 
             //very difficult to debug since you can't step through it like a loop
-            
-            Deck deck = new Deck();//create object deck
+
+            //Deck deck = new Deck();//create object deck
 
             /*
             //count number of Aces in deck using lambda function
@@ -155,8 +184,8 @@ namespace TwentyOne
             Console.WriteLine(deck.Cards.Count);
             //Console.WriteLine("Times shuffled: {0}", timesShuffled);
             */
-            Console.ReadLine();
-            
+            //Console.ReadLine();
+
             //.NET does not support multiple inheritance, one class can only inherit from one other class
             //use interfaces
 
