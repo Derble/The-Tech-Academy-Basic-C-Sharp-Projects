@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace TwentyOne
 {
@@ -10,6 +11,14 @@ namespace TwentyOne
     {
         static void Main(string[] args)
         {
+            //I/O demo, writing text to file
+            //writing text
+            //string text = "Here is some text.";
+            //File.WriteAllText(@"C:\Users\RX-78\Desktop\log.txt", text);//@ symbol read string exactly as it is
+            //reading text
+            //string text = File.ReadAllText(@"C:\Users\RX-78\Desktop\log.txt");
+            //other log code on Dealer
+
             //Putting it all together page 141, commented out everything and are creating a new main method, new code
             Console.WriteLine("Welcome to The Great Northern Hotel and Casino. Let's start by telling me your name.");
             string playerName = Console.ReadLine();

@@ -82,7 +82,7 @@ namespace TwentyOne
             int dealerScore = dealerResults.Where(x => x < 22).Max();
 
             if (playerScore > dealerScore) return true;
-            else if (playerScore < dealerScore) return true;
+            else if (playerScore < dealerScore) return false;
             else return null;
         }
     }
