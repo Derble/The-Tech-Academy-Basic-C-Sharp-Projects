@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TwentyOne
+namespace Casino.TwentyOne //anything having to do with dealer will be in the twentyone subsection of casino
 {
     public class TwentyOneDealer : Dealer
     {

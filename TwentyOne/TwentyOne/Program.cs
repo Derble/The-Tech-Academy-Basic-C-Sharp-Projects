@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Casino;
+using Casino.TwentyOne;
 
 namespace TwentyOne
 {
@@ -11,12 +13,23 @@ namespace TwentyOne
     {
         static void Main(string[] args)
         {
+            //Player newPlayer = new Player("Jesse");
+            //var keyword instead of player lets you implicitly define the variable
+            //var newPlayer = new Player("Jesse");
+            const string casinoName = "The Great Northern Hotel and Casino";//nice to have to reuse in other code so that name can't be changed
+
+            //Guid identifier = new Guid();
+            //Guid identifier = Guid.NewGuid();//creates a globally unique identifier
+
+            //namespace is a way to organize your code
+
+
             //datetime demo
             //datetime is a struct so it is not nullable
             //DateTime yearOfBirth = new DateTime(1995, 5, 23, 8, 32, 45);//create new datetime object
             //DateTime yearOfGraduation = new DateTime(2013, 6, 1, 16, 34, 22);
             //TimeSpan ageAtGraduation = yearOfGraduation - yearOfBirth;//gives the difference in days
-            
+
 
 
             //I/O demo, writing text to file
@@ -28,7 +41,7 @@ namespace TwentyOne
             //other log code on Dealer
 
             //Putting it all together page 141, commented out everything and are creating a new main method, new code
-            Console.WriteLine("Welcome to The Great Northern Hotel and Casino. Let's start by telling me your name.");
+            Console.WriteLine("Welcome to {0} and Casino. Let's start by telling me your name.", casinoName);
             string playerName = Console.ReadLine();
 
             Console.WriteLine("And how much money did you bring today?");
@@ -40,6 +53,11 @@ namespace TwentyOne
             if (answer == "yes" || answer == "ya" || answer == "yeah" || answer == "y")//|| is or
             {
                 Player player = new Player(playerName, bank);//sends playerName and bank to Player constructor in Player class
+                player.Id = Guid.NewGuid();
+                using (StreamWriter file = new StreamWriter(@"C:\Users\RX-78\Desktop\log.txt", true))//takes in a path, true is yes I want to append
+                {
+                    file.WriteLine(player.Id);
+                }
                 Game game = new TwentyOneGame();//polymorphism, exposes the overloaded operators for use
                 game += player; //adding player to the game
                 player.isActivelyPlaying = true; //isActivelyPlaying is a property of player

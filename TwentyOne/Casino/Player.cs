@@ -4,10 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TwentyOne
+namespace Casino
 {
     public class Player
     {
+        //Player constructor that takes one parameter added for additional features part one page 160
+        public Player(string name) : this(name, 100)//assign name to Name but if they don't provide a beginning balance, auto assign 100
+        {
+            //no implementation needed because code is being reused from other constructor
+            //reusing constructor, called constructor chaining or creating a constructor call chain
+        }
+
         //Player constructor
         public Player(string name, int beginningBalance)//taking 2 arguments
         {
@@ -21,6 +28,7 @@ namespace TwentyOne
         public string Name { get; set; }
         public bool isActivelyPlaying { get; set; }
         public bool Stay { get; set; }
+        public Guid Id { get; set; }
 
         public bool Bet(int amount)
         {
