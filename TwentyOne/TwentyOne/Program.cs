@@ -44,8 +44,20 @@ namespace TwentyOne
             Console.WriteLine("Welcome to {0} and Casino. Let's start by telling me your name.", casinoName);
             string playerName = Console.ReadLine();
 
+            bool validAnswer = false;
+            int bank = 0;
+            while (!validAnswer)//will get hit since validAnswer is false
+            {
+                Console.WriteLine("And how much money did you bring today?");
+                validAnswer = int.TryParse(Console.ReadLine(), out bank);//same as Int32.TryParse(),string in is console.readline, out paramter is bank
+                if (!validAnswer) Console.WriteLine("Please enter digits only, no decimals.");
+
+            }
+
+            /*//replaced with code above
             Console.WriteLine("And how much money did you bring today?");
             int bank = Convert.ToInt32(Console.ReadLine());
+            */
 
             Console.WriteLine("Hello, {0}. Would you like to join a game of 21 right now?", playerName);
             string answer = Console.ReadLine().ToLower();//makes whatever they asnwer as all lower case
@@ -63,7 +75,23 @@ namespace TwentyOne
                 player.isActivelyPlaying = true; //isActivelyPlaying is a property of player
                 while (player.isActivelyPlaying && player.Balance > 0)
                 {
-                    game.Play();
+                    try
+                    {
+                        game.Play();
+                    }
+                    catch (FraudException)
+                    {
+                        Console.WriteLine("Security! Kick this person out.");
+                        Console.ReadLine();
+                        return;
+                    }
+                    catch (Exception)//Exception is a generic exception, will catch all exceptions with that
+                    {
+                        Console.WriteLine("An error occurred. Please contact your system administrator");
+                        Console.ReadLine();
+                        return; //return in a void method returns nothing so it ends the method
+                    }
+                    
                 }
                 game -= player;
                 Console.WriteLine("Thank you for playing!");

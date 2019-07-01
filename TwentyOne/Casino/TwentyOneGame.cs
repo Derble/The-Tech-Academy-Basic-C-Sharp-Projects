@@ -26,11 +26,29 @@ namespace Casino.TwentyOne
             Dealer.Stay = false;
             Dealer.Deck = new Deck();//this makes it so that each round has a new deck, otherwise it would be a partial deck being used
             Dealer.Deck.Shuffle();
-            Console.WriteLine("Place your bet!");
+            //Console.WriteLine("Place your bet!");
 
             foreach (Player player in Players)//loop through each player and have them place a bet
             {
-                int bet = Convert.ToInt32(Console.ReadLine());
+                bool validAnswer = false;
+                int bet = 0;
+                while (!validAnswer)
+                {
+                    Console.WriteLine("Place your bet!");
+                    validAnswer = int.TryParse(Console.ReadLine(), out bet);
+                    if (!validAnswer)
+                    {
+                        Console.WriteLine("Please enter digits only, no decimals.");
+                    }
+                }
+
+                //int bet = Convert.ToInt32(Console.ReadLine());//replaced with code above
+
+                if (bet < 0)
+                {
+                    throw new FraudException();
+                }
+
                 bool successfullyBet = player.Bet(bet);//passing in the player's bet, will return true or false into successfullyBet
                 if (!successfullyBet)//(successfullyBet == false) is another way to write it
                 {
